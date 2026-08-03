@@ -1,0 +1,50 @@
+# 依存ライブラリの脆弱性・更新を自動で PR にする（過剰でも回し続ける）
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /app
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    labels:
+      - security
+      - dependencies
+    commit-message:
+      prefix: "deps(app)"
+
+  - package-ecosystem: npm
+    directory: /support-site
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 10
+    labels:
+      - security
+      - dependencies
+    commit-message:
+      prefix: "deps(support-site)"
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - security
+      - dependencies
+    commit-message:
+      prefix: "deps(actions)"
+
+  - package-ecosystem: gradle
+    directory: /app/android
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    labels:
+      - security
+      - dependencies
+    commit-message:
+      prefix: "deps(android)"

@@ -1,0 +1,42 @@
+# Gitleaks — 誤検知を抑えつつ、Android / Web 公開リポ向けに厳しめ
+title = "furilog"
+
+[extend]
+useDefault = true
+
+# このリポジトリではそもそも載せるべきでないパス（念のためルールでも拒否）
+[allowlist]
+description = "Known safe paths / docs that mention secret keywords only as instructions"
+paths = [
+  '''(^|/)docs/security/''',
+  '''(^|/)SECURITY\.md$''',
+  '''(^|/)\.gitleaks\.toml$''',
+  '''(^|/)scripts/security-check\.(ps1|sh)$''',
+  '''(^|/)\.github/workflows/secret-scan\.yml$''',
+  '''package-lock\.json$''',
+]
+
+# 追加: 個人パス・日本向け運用で起きやすい漏れ
+[[rules]]
+id = "windows-user-path"
+description = "Windows absolute path with user home (PII / machine fingerprint)"
+regex = '''(?i)C:\\Users\\[A-Za-z0-9._-]+'''
+keywords = ["C:\\Users\\", "C:/Users/"]
+
+[[rules]]
+id = "macos-user-path"
+description = "macOS absolute path with user home"
+regex = '''(?i)/Users/[A-Za-z0-9._-]+/'''
+keywords = ["/Users/"]
+
+[[rules]]
+id = "android-keystore-password-literal"
+description = "Possible hardcoded Android keystore password assignment"
+regex = '''(?i)(storePassword|keyPassword)\s*[=:]\s*['"][^'"]{4,}['"]'''
+keywords = ["storePassword", "keyPassword"]
+
+[[rules]]
+id = "generic-email"
+description = "Email address in source (prefer GitHub Issues only). Domain must start with a letter to avoid @2x.png."
+regex = '''(?i)\b[A-Za-z0-9._%+\-]+@[A-Za-z][A-Za-z0-9\-]*(\.[A-Za-z0-9\-]+)+\b'''
+keywords = ["@"]

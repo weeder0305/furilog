@@ -1,0 +1,18 @@
+#!/bin/sh
+# commit 直前に秘密検査。失敗したらコミット自体を止める。
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+cd "$ROOT" || exit 1
+
+if command -v pwsh >/dev/null 2>&1; then
+  pwsh -NoProfile -File "scripts/security-check.ps1"
+  exit $?
+fi
+
+if command -v powershell.exe >/dev/null 2>&1; then
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File "scripts/security-check.ps1"
+  exit $?
+fi
+
+echo "security-check: PowerShell not found; refusing commit (strict mode)." >&2
+echo "Install PowerShell, or temporarily: git commit --no-verify (非推奨)" >&2
+exit 1

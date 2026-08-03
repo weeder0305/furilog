@@ -49,12 +49,15 @@ release/artifacts/
 *.keystore
 *.p12
 *.pem
+*.mobileprovision
+*.provtemplate
 key.properties
 **/upload-key.properties
 **/*-release.keystore
 **/*-upload.jks
+**/furilog-release/**
 
-# Env / local secrets
+# Env / local secrets / cloud tooling state
 .env
 .env.*
 !.env.example
@@ -62,6 +65,22 @@ key.properties
 .wrangler/
 .vercel/
 .openai/
+.secrets/
+secrets/
+**/credentials.json
+**/serviceAccount*.json
+**/google-services.json
+**/GoogleService-Info.plist
+**/google-services.json.backup
+**/*-firebase-adminsdk-*.json
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.ppk
+
+# Hosting private config (use support-site/hosting.example.json only in git)
+support-site/.openai/
 
 # Logs
 logs/

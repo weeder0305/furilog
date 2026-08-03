@@ -32,6 +32,23 @@
 - 署名鍵・パスワード・`local.properties`
 - APK / AAB などのビルド成果物
 - 個人用の作業メモ・セッション引継ぎ・AI 用ローカル指示
+- `.env` / `.openai/` / クラウドのプロジェクト ID・デプロイトークン
+
+## セキュリティ（所有者向け・厳しめ）
+
+公開リポジトリなので、**秘密が混ざらないこと**を機械的に止めます。
+
+```powershell
+# 初回だけ（commit/push 前の自動検査を有効化）
+pwsh -File scripts/install-git-hooks.ps1
+
+# いつでも手動検査（FAIL なら push しない）
+pwsh -File scripts/security-check.ps1
+```
+
+- 方針・インシデント時の手順: [docs/security/はじめてのセキュリティ手順.md](./docs/security/はじめてのセキュリティ手順.md)
+- 報告窓口: [SECURITY.md](./SECURITY.md)
+- GitHub 上でも Secret scanning / Dependabot / CodeQL / Gitleaks を有効化
 
 ## 必要環境
 
@@ -80,7 +97,8 @@ npm install
 npm run dev
 ```
 
-公開中のサポート／Web アプリ入口は、デプロイ済みのサポートサイト（製品の公開 URL）を参照してください。個人のメールアドレスや OS ユーザー名付きパスはリポジトリに記載しません。
+- 本番のサイト URL はソースに直書きしません。必要なら `support-site/.env` に `SITE_URL=` を設定（`.env.example` 参照。`.env` は commit しない）。
+- 個人のメールアドレスや OS ユーザー名付きパスはリポジトリに記載しません。
 
 ## ライセンス
 

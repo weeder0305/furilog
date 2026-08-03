@@ -1,8 +1,30 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+/**
+ * 本番ホスト名をソースに直書きしない。
+ * デプロイ環境またはローカル .env の SITE_URL / NEXT_PUBLIC_SITE_URL を使う。
+ * 未設定時は開発用 localhost（OGP の絶対 URL が要る本番では必ず設定）。
+ */
+function resolveMetadataBase(): URL {
+  const candidates = [
+    process.env.SITE_URL,
+    process.env.NEXT_PUBLIC_SITE_URL,
+    process.env.CF_PAGES_URL,
+  ];
+  for (const raw of candidates) {
+    if (!raw || !raw.trim()) continue;
+    try {
+      return new URL(raw.trim());
+    } catch {
+      // 次の候補へ
+    }
+  }
+  return new URL("http://localhost:3000");
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://furilog-support.weeder0305.chatgpt.site"),
+  metadataBase: resolveMetadataBase(),
   title: "ふりろぐ｜ダンス動画の振り返りノート",
   description: "ダンス動画をフレーム単位で確認し、付箋とメモで練習を記録するローカル動画ノート。",
   icons: { icon: "/app-icon.png" },

@@ -1,0 +1,17 @@
+#!/bin/sh
+# push 直前にもう一度検査（pre-commit を --no-verify で飛ばした場合の保険）
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || exit 0
+cd "$ROOT" || exit 1
+
+if command -v pwsh >/dev/null 2>&1; then
+  pwsh -NoProfile -File "scripts/security-check.ps1"
+  exit $?
+fi
+
+if command -v powershell.exe >/dev/null 2>&1; then
+  powershell.exe -NoProfile -ExecutionPolicy Bypass -File "scripts/security-check.ps1"
+  exit $?
+fi
+
+echo "security-check: PowerShell not found; refusing push (strict mode)." >&2
+exit 1

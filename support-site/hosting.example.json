@@ -1,0 +1,6 @@
+{
+  "project_id": null,
+  "d1": null,
+  "r2": null,
+  "_comment": "ローカル専用の .openai/hosting.json は git に入れない。クローン直後は本ファイルを雛形にする。"
+}

@@ -63,8 +63,9 @@ upload-key.properties
 .externalNativeBuild
 .cxx/
 
-# Google Services (e.g. APIs or Firebase)
-# google-services.json
+# Google Services (e.g. APIs or Firebase) — 公開リポではコミットしない
+google-services.json
+GoogleService-Info.plist
 
 # Freeline
 freeline.py
