@@ -1,0 +1,91 @@
+.home-page {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-content {
+  flex: 1;
+  padding-bottom: 88px; /* FABと被らないよう余白 */
+}
+
+.home-loading {
+  text-align: center;
+  color: var(--text-dim);
+  padding: 40px 16px;
+}
+
+.home-list-tools {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 10px 0;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
+.home-selection-tools {
+  position: sticky;
+  top: 52px;
+  z-index: 40;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 7px 10px;
+  background: var(--surface-2);
+  box-shadow: var(--shadow);
+}
+
+.home-selection-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.home-selection-actions button {
+  min-height: 36px;
+  border: 1px solid var(--primary-strong);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 6px 9px;
+  color: var(--text);
+}
+
+.home-selection-actions .home-selection-delete {
+  border-color: var(--danger);
+  background: var(--danger);
+  color: #fff;
+}
+
+@media (max-width: 420px) {
+  .home-selection-tools {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-selection-actions {
+    width: 100%;
+  }
+
+  .home-selection-actions button {
+    flex: 1;
+  }
+}
+
+.home-sort-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.home-sort-select {
+  max-width: 180px;
+  border: 1px solid var(--surface-2);
+  border-radius: 7px;
+  background: var(--surface);
+  padding: 5px 8px;
+  font-size: 0.82rem;
+}

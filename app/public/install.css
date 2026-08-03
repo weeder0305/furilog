@@ -1,0 +1,25 @@
+:root { color-scheme: dark; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #070930; color: #f5f4ff; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: radial-gradient(circle at top, #242259 0, #070930 44%); }
+.installer { width: min(100% - 28px, 720px); margin: 0 auto; padding: 32px 0 64px; }
+.intro { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+.intro img { border-radius: 18px; }
+.eyebrow { margin: 0 0 5px; color: #b8a8ff; font-size: .76rem; font-weight: 800; letter-spacing: .12em; }
+h1 { margin: 0; font-size: clamp(1.55rem, 5vw, 2.25rem); }
+.lead { color: #dedbf2; line-height: 1.75; }
+section, .consent-box { margin-top: 14px; padding: 18px; border: 1px solid rgba(184,168,255,.2); border-radius: 16px; background: rgba(20,22,62,.9); }
+h2 { margin: 0 0 10px; font-size: 1.05rem; }
+ul { margin: 0; padding-left: 1.25rem; }
+li { margin: 7px 0; color: #d2cfe7; line-height: 1.6; }
+.note, .warning { margin: 13px 0 0; padding: 11px 12px; border-radius: 10px; color: #e8e5f8; line-height: 1.55; font-size: .9rem; background: rgba(105,86,190,.18); }
+.warning { background: rgba(222,160,65,.14); border: 1px solid rgba(222,160,65,.25); }
+.consent-box { position: sticky; bottom: 10px; box-shadow: 0 12px 40px rgba(0,0,0,.35); }
+label { display: flex; gap: 10px; align-items: flex-start; line-height: 1.55; cursor: pointer; }
+input { width: 21px; height: 21px; flex: 0 0 auto; margin-top: 1px; accent-color: #8b72ff; }
+button, .open-app { display: block; width: 100%; margin-top: 14px; padding: 14px; border: 0; border-radius: 11px; background: #8065f2; color: white; font: inherit; font-weight: 800; text-align: center; text-decoration: none; }
+button:disabled { opacity: .42; cursor: not-allowed; }
+button:not(:disabled) { cursor: pointer; }
+#status { margin: 10px 0 0; min-height: 1.5em; color: #c9c5dd; font-size: .86rem; text-align: center; }
+.open-app { background: #42b983; color: #061b12; }
+[hidden] { display: none !important; }
+@media (max-width: 520px) { .installer { padding-top: 22px; } .consent-box { bottom: 6px; } }

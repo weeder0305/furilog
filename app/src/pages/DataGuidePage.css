@@ -1,0 +1,12 @@
+.data-guide-page { min-height: 100vh; background: var(--bg); color: var(--text); }
+.data-guide-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 12px; padding: 14px 16px; background: rgba(13, 20, 33, .96); border-bottom: 1px solid rgba(179, 157, 219, .18); }
+.data-guide-header button { width: 40px; height: 40px; border: 0; border-radius: 10px; background: var(--surface); color: var(--text); font-size: 1.2rem; }
+.data-guide-header h1 { margin: 0; font-size: 1.05rem; }
+.data-guide-main { width: min(100% - 28px, 720px); margin: 0 auto; padding: 20px 0 56px; display: grid; gap: 14px; }
+.data-guide-main section { border: 1px solid rgba(179, 157, 219, .2); border-radius: 14px; background: var(--surface); padding: 18px; }
+.data-guide-main .data-guide-lead { background: linear-gradient(135deg, rgba(66, 185, 131, .16), rgba(109, 79, 196, .16)); }
+.data-guide-main h2 { margin: 0 0 9px; font-size: 1rem; }
+.data-guide-main p, .data-guide-main li { color: var(--text-dim); line-height: 1.7; }
+.data-guide-main p { margin: 8px 0 0; }
+.data-guide-main ul { margin: 8px 0 0; padding-left: 20px; }
+.data-guide-main strong { color: var(--text); }

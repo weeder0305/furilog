@@ -1,0 +1,76 @@
+.fab-container {
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  z-index: 150;
+}
+
+.fab-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  box-shadow: var(--shadow);
+  font-size: 1.6rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.fab-btn:active {
+  background: var(--primary-strong);
+}
+
+.fab-hidden-input {
+  display: none;
+}
+
+.fab-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 149;
+}
+
+.fab-menu {
+  position: absolute;
+  right: 0;
+  bottom: 68px;
+  background: var(--surface-2);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-width: 180px;
+}
+
+.fab-menu-item {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  padding: 14px 16px;
+  text-align: left;
+  font-size: 0.95rem;
+  touch-action: manipulation;
+}
+
+.fab-menu-item:active {
+  background: var(--surface);
+}
+
+.fab-menu-item:disabled {
+  opacity: 0.6;
+}
+
+.fab-error {
+  max-width: 260px;
+  margin: 0;
+  padding: 8px 16px 12px;
+  color: #ff9aa8;
+  font-size: 0.78rem;
+}

@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070930" />
+    <link rel="manifest" href="/app/manifest.webmanifest" />
+    <link rel="icon" href="/app/app-icon-192.png" />
+    <link rel="stylesheet" href="/setup/install.css" />
+    <title>ふりろぐを端末に保存</title>
+  </head>
+  <body>
+    <main class="installer">
+      <header class="intro">
+        <img src="/app/app-icon-192.png" alt="" width="72" height="72" />
+        <div>
+          <p class="eyebrow">完全オフライン版</p>
+          <h1>ふりろぐを端末に保存</h1>
+        </div>
+      </header>
+
+      <p class="lead">この説明ページを開いただけでは、アプリ本体は保存されません。以下を確認し、同意した場合だけ保存を開始します。</p>
+
+      <section>
+        <h2>保存されるもの</h2>
+        <ul>
+          <li>ふりろぐの画面・プログラム・アイコンなど、オフライン動作に必要なアプリ一式</li>
+          <li>利用開始後に自分で選んだ動画・サムネイル・付箋・メモ（ブラウザ内の専用保存領域）</li>
+        </ul>
+        <p class="note">この同意操作だけで、端末内の写真や動画を勝手に取り込むことはありません。</p>
+      </section>
+
+      <section>
+        <h2>通信と安全性</h2>
+        <ul>
+          <li>アプリ一式の初回保存には通信を使います。保存後のアプリ画面は外部通信を遮断し、オフラインで動作します。</li>
+          <li>アカウント、広告、アクセス解析、クラウド同期はありません。保存した動画・付箋・メモを運営者へ送信しません。</li>
+          <li>ブラウザが新版を確認するときは通信する場合がありますが、端末内の動画やメモは含まれません。</li>
+        </ul>
+        <p class="warning">端末を共有する人や、端末ロックを解除できる人からデータを隠す暗号化機能ではありません。</p>
+      </section>
+
+      <section>
+        <h2>保存データの管理</h2>
+        <ul>
+          <li>動画・付箋・メモはアプリ内で個別に削除できます。</li>
+          <li>タブを閉じる、ブラウザを終了する、端末を再起動するだけでは通常消えません。</li>
+          <li>ブラウザの「Webサイトデータ」を消去すると、アプリ本体と保存データが消えます。ブラウザ削除や端末初期化でも失われる場合があります。</li>
+          <li>保存状況と容量は、アプリ内の「オフライン・データ管理」で確認できます。</li>
+        </ul>
+        <p class="note">大切な元動画は、写真アプリや別の保存先にも残してください。</p>
+      </section>
+
+      <div class="consent-box">
+        <label>
+          <input id="consent" type="checkbox" />
+          <span>上記の保存内容、安全性、データ管理方法を確認し、端末への保存に同意します。</span>
+        </label>
+        <button id="install" type="button" disabled>同意して端末に保存</button>
+        <p id="status" role="status" aria-live="polite">同意するまでダウンロードは始まりません。</p>
+        <a id="open-app" class="open-app" href="/app/run/#/" hidden>ふりろぐを開く</a>
+      </div>
+    </main>
+    <script src="/setup/install.js"></script>
+  </body>
+</html>

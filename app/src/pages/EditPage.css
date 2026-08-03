@@ -1,0 +1,120 @@
+.edit-page {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.edit-heading {
+  margin: 4px 0 0;
+  font-size: 1.2rem;
+}
+
+.edit-file-name {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin: -8px 0 0;
+  word-break: break-all;
+}
+
+.edit-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.edit-help {
+  color: var(--text-dim);
+  line-height: 1.5;
+  font-size: 0.78rem;
+}
+
+.edit-input,
+.edit-textarea {
+  background: var(--surface);
+  border: 1px solid var(--surface-2);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px 12px;
+  font-size: 1rem;
+}
+
+.edit-textarea {
+  resize: vertical;
+  font-family: inherit;
+}
+
+.edit-new-folder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: var(--surface);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.edit-new-folder-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.edit-error {
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.edit-loading {
+  color: var(--text-dim);
+  text-align: center;
+  padding: 40px 0;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.edit-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  background: transparent;
+  color: var(--text-dim);
+  touch-action: manipulation;
+  min-width: 84px;
+}
+
+.edit-btn-primary {
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-btn:disabled {
+  opacity: 0.6;
+}
+
+.edit-spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  display: inline-block;
+  animation: edit-spin 0.7s linear infinite;
+}
+
+@keyframes edit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

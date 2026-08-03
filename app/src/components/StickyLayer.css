@@ -1,0 +1,263 @@
+.sticky-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.sticky-layer-placing {
+  pointer-events: auto;
+  cursor: crosshair;
+}
+
+.sticky-layer-range-picking {
+  pointer-events: none;
+  cursor: default;
+}
+
+.sticky-hint {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  pointer-events: none;
+}
+
+.sticky-pin {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sticky-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--sticky-pin-color, var(--sticky));
+  border: 2px solid #6b5900;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.3);
+  touch-action: none;
+  cursor: grab;
+}
+
+.sticky-pin-dragging .sticky-dot {
+  cursor: grabbing;
+  transform: scale(1.2);
+}
+
+.sticky-bubble-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.sticky-edit-btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  touch-action: manipulation;
+}
+
+.sticky-bubble {
+  margin-top: 4px;
+  background: var(--sticky-pin-color, var(--sticky));
+  color: #2a2200;
+  border-radius: 8px;
+  padding: 4px 8px;
+  max-width: 160px;
+  font-size: 0.8rem;
+  box-shadow: var(--shadow);
+}
+
+.sticky-pin-color-yellow { --sticky-pin-color: #ffd54f; }
+.sticky-pin-color-red { --sticky-pin-color: #ef6b73; }
+.sticky-pin-color-green { --sticky-pin-color: #65c18c; }
+.sticky-pin-color-blue { --sticky-pin-color: #64a8ff; }
+
+.sticky-text {
+  margin: 0;
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.sticky-pin-open .sticky-bubble {
+  max-width: 220px;
+}
+
+.sticky-delete-btn {
+  margin-top: 6px;
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  touch-action: manipulation;
+}
+
+.sticky-input-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 8px;
+  width: min(260px, calc(100% - 16px));
+  max-height: calc(100% - 16px);
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+  z-index: 10;
+}
+
+.sticky-color-picker {
+  display: flex;
+  gap: 7px;
+  margin-top: 7px;
+}
+
+.sticky-color-choice {
+  width: 24px;
+  height: 24px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.sticky-color-choice-yellow { background: #ffd54f; }
+.sticky-color-choice-red { background: #ef6b73; }
+.sticky-color-choice-green { background: #65c18c; }
+.sticky-color-choice-blue { background: #64a8ff; }
+
+.sticky-color-choice-selected {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px var(--primary-strong);
+}
+
+.sticky-range-mode,
+.sticky-range-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 7px;
+  color: var(--text-dim);
+  font-size: 0.72rem;
+}
+
+.sticky-range-mode select {
+  flex: 1;
+  border: 1px solid var(--surface);
+  border-radius: 6px;
+  background: var(--bg);
+  padding: 4px 6px;
+  font-size: 0.75rem;
+}
+
+.sticky-range-control {
+  align-items: stretch;
+  flex-direction: column;
+}
+
+.sticky-range-pick-btn {
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--primary-strong);
+  padding: 7px 8px;
+  font: inherit;
+}
+
+.sticky-range-picker {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  width: min(420px, calc(100% - 16px));
+  pointer-events: auto;
+  z-index: 30;
+  border-radius: 10px;
+  background: rgba(20, 24, 31, 0.88);
+  color: #fff;
+  padding: 8px 10px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(4px);
+}
+
+.sticky-range-picker-times {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.78rem;
+}
+
+.sticky-range-picker p {
+  margin: 5px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.72rem;
+}
+
+.sticky-range-picker-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.sticky-range-picker-actions button {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+}
+
+.sticky-range-picker-actions button:disabled {
+  opacity: 0.45;
+}
+
+.sticky-input-textarea {
+  width: 100%;
+  resize: none;
+  border-radius: 6px;
+  border: 1px solid var(--surface);
+  background: var(--bg);
+  color: var(--text);
+  padding: 6px 8px;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.sticky-input-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.sticky-input-actions button {
+  border: none;
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  touch-action: manipulation;
+}
+
+.sticky-input-cancel {
+  background: transparent;
+  color: var(--text-dim);
+}
+
+.sticky-input-save {
+  background: var(--primary);
+  color: #fff;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ふりろぐ — ダンス動画ノート",
+  "short_name": "ふりろぐ",
+  "description": "ダンス動画をフレーム単位で確認し、付箋とメモで練習を記録するローカル動画ノート",
+  "id": "./run/",
+  "start_url": "./run/#/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#070930",
+  "theme_color": "#070930",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

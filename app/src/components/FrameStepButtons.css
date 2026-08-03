@@ -1,0 +1,22 @@
+.frame-step-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 10px 0;
+}
+
+.frame-step-btn {
+  width: 64px;
+  height: 48px;
+  border-radius: 10px;
+  border: none;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.4rem;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.frame-step-btn:active {
+  background: var(--primary);
+}

@@ -1,0 +1,96 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Build outputs
+dist/
+dist-web/
+dist-ssr/
+out/
+.next/
+.vinext/
+.gradle/
+# Android / Capacitor build trees (not support-site/build source helpers)
+**/android/**/build/
+**/android/capacitor-cordova-android-plugins/build/
+**/ios/App/App/public/
+coverage/
+*.tsbuildinfo
+
+# Capacitor generated / local Android config
+**/android/local.properties
+**/android/app/src/main/assets/public/
+**/android/app/src/main/assets/capacitor.config.json
+**/android/app/src/main/assets/capacitor.plugins.json
+**/android/app/src/main/res/xml/config.xml
+**/android/capacitor-cordova-android-plugins/
+
+# Binaries and release artifacts (source only in this repo)
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+*.jar
+!**/gradle/wrapper/gradle-wrapper.jar
+release/artifacts/
+*.tar.gz
+*.tgz
+*.zip
+
+# Signing secrets (never commit)
+*.jks
+*.keystore
+*.p12
+*.pem
+key.properties
+**/upload-key.properties
+**/*-release.keystore
+**/*-upload.jks
+
+# Env / local secrets
+.env
+.env.*
+!.env.example
+*.local
+.wrangler/
+.vercel/
+.openai/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+vite-dev*.log
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Personal / private working notes (local AI and session handoff)
+CLAUDE.md
+AGENTS.md
+プロジェクト進捗.md
+release/NEXT_SESSION_PLAY_STORE_HANDOFF.md
+release/ARTIFACTS.md
+release/RELEASE_CHECKLIST.md
+backup/
+**/backup/

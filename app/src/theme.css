@@ -1,0 +1,57 @@
+/* WazaLog テーマ（設計書 6章：ネイビー×暗め紫） */
+
+:root {
+  color-scheme: dark;
+  --bg: #0d1421; /* 最深部ネイビー */
+  --surface: #16213a; /* カード・ヘッダー */
+  --surface-2: #1e2a4a; /* ドロワー・モーダル */
+  --primary: #6d4fc4; /* 暗め紫（ボタン・FAB） */
+  --primary-strong: #8b6ce0; /* ハイライト・アクティブ */
+  --accent: #b39ddb; /* タグチップ・リンク */
+  --text: #e8e6f0;
+  --text-dim: #9a97ad;
+  --danger: #e05c6f;
+  --sticky: #ffd54f; /* 付箋ピン（視認性のため暖色） */
+
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sticky);
+  outline-offset: 3px;
+}
+
+a {
+  color: var(--accent);
+}
